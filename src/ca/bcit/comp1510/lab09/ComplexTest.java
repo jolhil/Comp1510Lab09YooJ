@@ -42,13 +42,23 @@ class ComplexTest {
     @Test
     void testPolarComplex() {
         Complex z3 = z1.reciprocal();
-        assertEquals(3.0 + 4.0, z3);
+        double denominator = TEST1R * TEST1R + TEST1I * TEST1I;
+        Complex answer = new Complex(TEST1R / denominator, -TEST1I / denominator);
+        assertEquals(answer, z3);
     }
     
     @Test
     void testAdd() {
+        
         Complex z4 = z1.add(z2);
-        assertEquals(4.0 + 5.0, z4);
+        Complex answer = new Complex((TEST1R + TEST2R), (TEST1I + TEST2I));
+        assertEquals(answer, z4);
+        
+       // 
+        
+        
+        //omplex z4 = z1.add(z2);
+        
     }
 
 }
